@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163d2a">
+  <title>Flores amarillas para mi amor</title>
+  <meta name="description" content="Un pequeño detalle para el amor de mi vida, inspirado en cada detalle que he aprendido a querer de ella.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='11' fill='%23754b20'/%3E%3Cg fill='%23ffd447'%3E%3Cellipse cx='32' cy='10' rx='9' ry='15'/%3E%3Cellipse cx='32' cy='54' rx='9' ry='15'/%3E%3Cellipse cx='10' cy='32' rx='15' ry='9'/%3E%3Cellipse cx='54' cy='32' rx='15' ry='9'/%3E%3Cellipse cx='16' cy='16' rx='9' ry='15' transform='rotate(-45 16 16)'/%3E%3Cellipse cx='48' cy='16' rx='9' ry='15' transform='rotate(45 48 16)'/%3E%3Cellipse cx='16' cy='48' rx='9' ry='15' transform='rotate(45 16 48)'/%3E%3Cellipse cx='48' cy='48' rx='9' ry='15' transform='rotate(-45 48 48)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='10' fill='%23643d1d'/%3E%3C/svg%3E">
+  <style>
+    :root { --green:#0e3022; --cream:#fff9e9; --yellow:#ffd447; --gold:#f0b81d; --ink:#183628; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--cream); background:var(--green); font-family:"DM Sans",sans-serif; }
+    .hero { min-height:100svh; position:relative; display:grid; align-items:end; overflow:hidden; isolation:isolate; background:linear-gradient(90deg,rgba(6,30,20,.96) 0%,rgba(6,30,20,.72) 46%,rgba(6,30,20,.16) 100%),url('sunflowers-hero.png') center/cover no-repeat; }
+    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(circle at 75% 20%,rgba(255,212,71,.22),transparent 30%),linear-gradient(0deg,rgba(6,25,18,.78),transparent 48%); }
+    .wrap { width:min(1180px,calc(100% - 40px)); margin:auto; }
+    .hero-content { padding:clamp(90px,14vh,160px) 0 68px; max-width:680px; }
+    .eyebrow { display:flex; align-items:center; gap:12px; margin:0 0 20px; color:#ffeaa1; font-size:.83rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:38px; height:1px; background:var(--yellow); }
+    h1,h2 { font-family:"Playfair Display",serif; }
+    h1 { margin:0; max-width:720px; font-size:clamp(3.25rem,9vw,7.5rem); line-height:.91; letter-spacing:-.045em; }
+    h1 em { color:var(--yellow); font-weight:500; }
+    .intro { max-width:570px; margin:30px 0 0; font-size:clamp(1.05rem,2vw,1.28rem); line-height:1.75; color:#fff8e8; }
+    .scroll { position:absolute; right:clamp(20px,5vw,70px); bottom:58px; display:flex; gap:12px; align-items:center; color:#fff4ce; font-size:.78rem; letter-spacing:.13em; text-transform:uppercase; writing-mode:vertical-rl; }
+    .scroll span { width:1px; height:54px; background:linear-gradient(var(--yellow),transparent); }
+    .letter { background:var(--cream); color:var(--ink); padding:clamp(74px,10vw,140px) 0; position:relative; overflow:hidden; }
+    .letter::before { content:""; position:absolute; width:460px; height:460px; border:1px solid rgba(224,167,20,.3); border-radius:50%; right:-220px; top:-220px; box-shadow:0 0 0 44px rgba(240,184,29,.04),0 0 0 88px rgba(240,184,29,.03); }
+    .letter-grid { display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); gap:clamp(45px,9vw,120px); align-items:start; }
+    .number { font-family:"Playfair Display",serif; font-size:clamp(5rem,12vw,10rem); line-height:.75; color:var(--gold); opacity:.42; }
+    .date-label { display:block; margin-top:22px; color:#6c7f72; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; }
+    h2 { font-size:clamp(2.4rem,5.5vw,4.6rem); line-height:1.04; letter-spacing:-.035em; margin:0 0 30px; }
+    .letter-copy p { margin:0 0 22px; font-size:clamp(1.04rem,1.7vw,1.19rem); line-height:1.9; color:#395447; }
+    .letter-copy strong { color:#173d2b; }
+    .signature { margin-top:44px!important; color:#173d2b!important; font-family:"Playfair Display",serif; font-size:1.45rem!important; font-style:italic; }
+    .music { background:#f3c727; color:#163d2a; padding:clamp(70px,9vw,110px) 0; }
+    .music-card { display:flex; align-items:center; justify-content:space-between; gap:32px; }
+    .music-kicker { margin:0 0 10px; font-size:.8rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
+    .music h2 { margin:0; max-width:760px; font-size:clamp(2.35rem,5.5vw,5rem); }
+    .music h2 em { font-weight:500; }
+    .play { width:116px; aspect-ratio:1; flex:0 0 auto; border:0; border-radius:50%; background:#153a29; color:#fff7de; display:grid; place-items:center; box-shadow:0 18px 40px rgba(14,48,34,.22); transition:transform .25s,box-shadow .25s; text-decoration:none; }
+    .play:hover,.play:focus-visible { transform:translateY(-5px) scale(1.03); box-shadow:0 24px 48px rgba(14,48,34,.3); outline:3px solid white; outline-offset:5px; }
+    .play svg { width:34px; margin-left:7px; }
+    footer { padding:28px 20px; text-align:center; background:#0b291d; color:#d8e4d5; font-size:.85rem; }
+    .petal { position:absolute; width:12px; height:20px; background:var(--yellow); border-radius:80% 10% 80% 10%; opacity:.75; animation:drift 9s linear infinite; pointer-events:none; }
+    .p1{left:15%;top:-5%;animation-delay:-2s}.p2{left:48%;top:-5%;animation-delay:-6s;scale:.7}.p3{left:82%;top:-5%;animation-delay:-4s;scale:1.2}
+    @keyframes drift { to { transform:translate(90px,115vh) rotate(520deg); } }
+    @media (max-width:760px) { .hero { background-position:63% center; } .hero-content{padding-bottom:86px}.scroll{display:none}.letter-grid{grid-template-columns:1fr}.number{font-size:6rem}.music-card{align-items:flex-start;flex-direction:column}.play{width:92px}.intro{line-height:1.65} }
+    @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto}.petal{display:none}.play{transition:none} }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="titulo">
+      <i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i>
+      <div class="wrap hero-content">
+        <p class="eyebrow">21 de septiembre · Flores amarillas</p>
+        <h1 id="titulo">No son solo <em>girasoles.</em></h1>
+        <p class="intro">Son una señal para que nunca olvides que, desde el día uno, he prestado atención a cada pequeño detalle de ti.</p>
+      </div>
+      <div class="scroll" aria-hidden="true">Para ti <span></span></div>
+    </section>
+
+    <section class="letter" aria-labelledby="carta">
+      <div class="wrap letter-grid">
+        <aside aria-hidden="true"><div class="number">01</div><span class="date-label">Desde el primer día</span></aside>
+        <div class="letter-copy">
+          <h2 id="carta">Mi amor, esto siempre ha sido sobre ti.</h2>
+          <p>Puede parecer un pequeño detalle, pero detrás de estas flores vive todo lo que siento. <strong>Cada girasol guarda un “te escucho”, un “te conozco” y un “me importas”.</strong></p>
+          <p>Desde que llegaste a mi vida, me he fijado en esas cosas mínimas que te hacen sonreír: tus gustos, tus gestos, la manera en que se iluminan tus ojos cuando algo te hace feliz. No porque tenga que recordarlas, sino porque todo lo que viene de ti se vuelve importante para mí.</p>
+          <p>Hoy te doy flores amarillas para decirte que mi amor también vive en los detalles. Que eres mi presente favorito, mi ilusión más bonita y <strong>el amor de mi vida.</strong></p>
+          <p class="signature">Con todo mi amor, siempre para ti. ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="music" aria-labelledby="cancion">
+      <div class="wrap music-card">
+        <div><p class="music-kicker">Nuestra banda sonora</p><h2 id="cancion">“Sabes una cosa” <em>— Luis Miguel</em></h2></div>
+        <a class="play" href="https://www.youtube.com/results?search_query=Sabes+una+cosa+Luis+Miguel+oficial" target="_blank" rel="noopener noreferrer" aria-label="Escuchar Sabes una cosa de Luis Miguel en YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>Hecho con amor, atención y un poquito de sol.</footer>
+</body>
+</html>
